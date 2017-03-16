@@ -22,7 +22,7 @@
 							$gourl = 'javascript:;';
 						}
 						?>
-						<div class="swiper-slide" style="background-image:url(<?=$row['picurl']?>)">
+						<div class="swiper-slide" style="background:url(<?=$row['picurl']?>) center top no-repeat">
 							<a href="<?=$gourl?>" style="display: block; height: 100%;"></a>
 						</div>
 						<?php
