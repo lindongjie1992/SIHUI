@@ -1,0 +1,52 @@
+<?php
+	require_once(dirname(__FILE__).'/include/config.inc.php');
+	$id = empty($id) ? 3 : intval($id);
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<?php require_once 'inc/link.php' ?>
+	</head>
+
+	<body>
+		<?php require_once 'inc/head.php' ?>
+
+		<!-- 焦点图开始  -->
+		<div class="banner" style="background: url(templates/default/images/about_banner.jpg) center top no-repeat;"></div>
+		<!-- 焦点图结束 -->
+		
+		<div class="layout">
+			<div class="page-warp clearfix">
+				<h2 class="m-page-title"><?=GetCatName($id)?></h2>
+				<ul class="m-page-nav fl">
+					<?php
+					$dosql->Execute("SELECT * FROM `#@__infoclass` WHERE parentid=2 AND checkinfo=true ORDER BY orderid DESC");
+					while($row = $dosql->GetArray())
+					{
+						if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
+							$gourl = 'about.php?id=' . $row['id'];
+						} else {
+							if ($cfg_isreurl == 'Y') {
+								$gourl = 'about-' . $row['id'] . '.html';
+							} else {
+								$gourl = $row['linkurl'];
+							}
+						}
+					?>
+						<li><a href="<?=$gourl?>"><?=$row['classname']?></a></li>
+					<?php
+					}
+					?>
+				</ul>
+
+				<div class="m-page-content1 fr">
+					<?=Info($id)?>
+				</div>
+			</div>
+		</div>
+
+		<?php require_once 'inc/foot.php' ?>
+	</body>
+
+</html>
