@@ -11,11 +11,22 @@ RewriteCond %{QUERY_STRING} ^(.*)$
 RewriteRule ^about-([0-9]+)\.html$ about.php?id=$1
 RewriteCond %{QUERY_STRING} ^(.*)$
 
-RewriteRule ^infoa-([0-9]+)-([0-9]+)\.html$ infoa.php?cld=$1&id=$2
+RewriteRule ^activity_show-([0-9]+)-([0-9]+)\.html$ activity_show.php?cld=$1&id=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+
+RewriteRule ^news_show-([0-9]+)-([0-9]+)\.html$ news_show.php?cid=$1&id=$2
 RewriteCond %{QUERY_STRING} ^(.*)$
 
 RewriteRule ^news-([0-9]+)-([0-9]+)\.html$ news.php?cid=$1&page=$2
 RewriteCond %{QUERY_STRING} ^(.*)$
+
+RewriteRule ^project\.html$ project.php
+RewriteCond %{QUERY_STRING} ^(.*)$
+
+RewriteRule ^project_show-([0-9]+)-([0-9]+)\.html$ project_show.php?cld=$1&id=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+
+
 RewriteRule ^newsshow-([0-9]+)-([0-9]+)-([0-9]+)\.html$ newsshow.php?cid=$1&id=$2&page=$3
 RewriteCond %{QUERY_STRING} ^(.*)$
 RewriteRule ^product-([0-9]+)-([0-9]+)\.html$ product.php?cid=$1&page=$2

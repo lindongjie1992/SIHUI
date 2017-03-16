@@ -6,6 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
+		<?php echo GetHeader(1,$id); ?>
 		<?php require_once 'inc/link.php' ?>
 	</head>
 

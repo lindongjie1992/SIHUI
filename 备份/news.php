@@ -36,7 +36,7 @@ $cid = empty($cid) ? 4 : intval($cid);
 				$dopage->GetPage("SELECT * FROM `#@__infolist` WHERE (classid=$cid OR parentstr LIKE '%,$cid,%') AND delstate='' AND checkinfo=true ORDER BY orderid DESC",8);
 				while($row = $dosql->GetArray())
 				{
-					if($row['linkurl']=='' and $cfg_isreurl!='Y') $gourl = 'newsshow.php?cid='.$row['classid'].'&id='.$row['id'];
+					if($row['linkurl']=='' and $cfg_isreurl!='Y') $gourl = 'news_show.php?cid='.$row['classid'].'&id='.$row['id'];
 					else if($cfg_isreurl=='Y') $gourl = 'newsshow-'.$row['classid'].'-'.$row['id'].'-1.html';
 					else $gourl = $row['linkurl'];
 

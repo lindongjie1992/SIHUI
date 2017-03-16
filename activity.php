@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
+		<?php echo GetHeader(1,19); ?>
 		<?php require_once 'inc/link.php' ?>
 	</head>
 
@@ -36,10 +37,10 @@
 						while($row = $dosql->GetArray()) {
 							//获取链接地址
 							if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
-								$gourl = 'infoa.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+								$gourl = 'activity_show.php?cid=' . $row['classid'] . '&id=' . $row['id'];
 							} else {
 								if ($cfg_isreurl == 'Y') {
-									$gourl = 'infoa-' . $row['classid'] . '-' . $row['id'] . '.html';
+									$gourl = 'activity_show-' . $row['classid'] . '-' . $row['id'] . '.html';
 								} else {
 									$gourl = $row['linkurl'];
 								}

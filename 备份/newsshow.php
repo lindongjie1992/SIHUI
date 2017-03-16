@@ -129,7 +129,7 @@ $(function(){
 				else
 				{
 					if($cfg_isreurl != 'Y')
-						$gourl = 'newsshow.php?cid='.$r['classid'].'&id='.$r['id'];
+						$gourl = 'news_show.php?cid='.$r['classid'].'&id='.$r['id'];
 					else
 						$gourl = 'newsshow-'.$r['classid'].'-'.$r['id'].'-1.html';
 
@@ -145,7 +145,7 @@ $(function(){
 				else
 				{
 					if($cfg_isreurl != 'Y')
-						$gourl = 'newsshow.php?cid='.$r['classid'].'&id='.$r['id'];
+						$gourl = 'news_show.php?cid='.$r['classid'].'&id='.$r['id'];
 					else
 						$gourl = 'newsshow-'.$r['classid'].'-'.$r['id'].'-1.html';
 

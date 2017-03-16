@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
+		<?php echo GetHeader(1); ?>
 		<?php require_once 'inc/link.php' ?>
 	</head>
 
@@ -54,10 +55,10 @@
 						if(isset($row['id'])) {
 							//获取链接地址
 							if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
-								$gourl = 'newsshow.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+								$gourl = 'news_show.php?cid=' . $row['classid'] . '&id=' . $row['id'];
 							} else {
 								if ($cfg_isreurl == 'Y') {
-									$gourl = 'newsshow-' . $row['classid'] . '-' . $row['id'] . '-1.html';
+									$gourl = 'news_show-' . $row['classid'] . '-' . $row['id'] . '.html';
 								} else {
 									$gourl = $row['linkurl'];
 								}
@@ -89,10 +90,10 @@
 							while($row = $dosql->GetArray()) {
 								//获取链接地址
 								if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
-									$gourl = 'newsshow.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+									$gourl = 'news_show.php?cid=' . $row['classid'] . '&id=' . $row['id'];
 								} else {
 									if ($cfg_isreurl == 'Y') {
-										$gourl = 'newsshow-' . $row['classid'] . '-' . $row['id'] . '-1.html';
+										$gourl = 'news_show-' . $row['classid'] . '-' . $row['id'] . '.html';
 									} else {
 										$gourl = $row['linkurl'];
 									}
@@ -118,10 +119,10 @@
 			while($row = $dosql->GetArray()) {
 				//获取链接地址
 				if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
-					$gourl = 'infoa.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+					$gourl = 'activity_show.php?cid=' . $row['classid'] . '&id=' . $row['id'];
 				} else {
 					if ($cfg_isreurl == 'Y') {
-						$gourl = 'infoa-' . $row['classid'] . '-' . $row['id'] . '.html';
+						$gourl = 'activity_show-' . $row['classid'] . '-' . $row['id'] . '.html';
 					} else {
 						$gourl = $row['linkurl'];
 					}
@@ -208,19 +209,11 @@
 							while($row = $dosql->GetArray()) {
 								//获取链接地址
 								if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
-									$gourl = 'newsshow.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+									$gourl = 'project_show.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+								} else if ($cfg_isreurl == 'Y') {
+									$gourl = 'project_show-' . $row['classid'] . '-' . $row['id'] . '.html';
 								} else {
-									if ($cfg_isreurl == 'Y') {
-										$gourl = 'newsshow-' . $row['classid'] . '-' . $row['id'] . '-1.html';
-									} else {
-										$gourl = $row['linkurl'];
-									}
-								}
-								//获取缩略图地址
-								if ($row['picurl'] != '') {
-									$picurl = $row['picurl'];
-								} else {
-									$picurl = 'templates/default/images/nofoundpic.gif';
+									$gourl = $row['linkurl'];
 								}
 								?>
 								<li><a title="<?=$row['title']?>" href="<?=$gourl?>"><?=ReStrLen($row['title'],18)?></a></li>
@@ -237,22 +230,15 @@
 							while($row = $dosql->GetArray()) {
 								//获取链接地址
 								if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
-									$gourl = 'newsshow.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+									$gourl = 'project_show.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+								} else if ($cfg_isreurl == 'Y') {
+									$gourl = 'project_show-' . $row['classid'] . '-' . $row['id'] . '.html';
 								} else {
-									if ($cfg_isreurl == 'Y') {
-										$gourl = 'newsshow-' . $row['classid'] . '-' . $row['id'] . '-1.html';
-									} else {
-										$gourl = $row['linkurl'];
-									}
+									$gourl = $row['linkurl'];
 								}
-								//获取缩略图地址
-								if ($row['picurl'] != '') {
-									$picurl = $row['picurl'];
-								} else {
-									$picurl = 'templates/default/images/nofoundpic.gif';
-								}
+
 								?>
-								<li><a title="四会产业园道路建设项目招商合作" href="#">四会产业园道路建设项目招商合作</a></li>
+								<li><a title="<?=$row['title']?>" href="<?=$gourl?>"><?=ReStrLen($row['title'],18)?></a></li>
 								<?php
 							}
 							?>
@@ -266,22 +252,15 @@
 							while($row = $dosql->GetArray()) {
 								//获取链接地址
 								if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
-									$gourl = 'newsshow.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+									$gourl = 'project_show.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+								} else if ($cfg_isreurl == 'Y') {
+									$gourl = 'project_show-' . $row['classid'] . '-' . $row['id'] . '.html';
 								} else {
-									if ($cfg_isreurl == 'Y') {
-										$gourl = 'newsshow-' . $row['classid'] . '-' . $row['id'] . '-1.html';
-									} else {
-										$gourl = $row['linkurl'];
-									}
+									$gourl = $row['linkurl'];
 								}
-								//获取缩略图地址
-								if ($row['picurl'] != '') {
-									$picurl = $row['picurl'];
-								} else {
-									$picurl = 'templates/default/images/nofoundpic.gif';
-								}
+
 								?>
-								<li><a title="四会产业园道路建设项目招商合作" href="#">四会产业园道路建设项目招商合作</a></li>
+								<li><a title="<?=$row['title']?>" href="<?=$gourl?>"><?=ReStrLen($row['title'],18)?></a></li>
 								<?php
 							}
 							?>

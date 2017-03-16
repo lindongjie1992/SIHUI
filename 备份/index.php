@@ -70,7 +70,7 @@ $(function(){
 				{
 					//获取链接地址
 					if($row['linkurl']=='' and $cfg_isreurl!='Y')
-						$gourl = 'newsshow.php?cid='.$row['classid'].'&id='.$row['id'];
+						$gourl = 'news_show.php?cid='.$row['classid'].'&id='.$row['id'];
 					else if($cfg_isreurl=='Y')
 						$gourl = 'newsshow-'.$row['classid'].'-'.$row['id'].'-1.html';
 					else
@@ -100,7 +100,7 @@ $(function(){
 				{
 					//获取链接地址
 					if($row['linkurl']=='' and $cfg_isreurl!='Y')
-						$gourl = 'newsshow.php?cid='.$row['classid'].'&id='.$row['id'];
+						$gourl = 'news_show.php?cid='.$row['classid'].'&id='.$row['id'];
 					else if($cfg_isreurl=='Y')
 						$gourl = 'newsshow-'.$row['classid'].'-'.$row['id'].'-1.html';
 					else
