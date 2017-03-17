@@ -103,6 +103,10 @@ body{font-family: "microsoft yahei"; font-size:14px; background:#efefef; color:#
 .article-content1 .page-turning{border-top:1px solid #eee;}
 .article-content1 .page-turning{height:40px; line-height: 40px;}
 
+.page_list,.page_info{text-align: center;}
+.page_list a{display: inline-block; padding:8px 15px; border:1px solid #ddd; margin-left:-1px;}
+.page_list .on{background:#8a8a8a; color:#fff;}
+
 /*活动专题*/
 .activity-hd .title{width:280px; height:187px; background:#5eb5bd; color:#fff; font-size:30px; text-align: center; line-height: 50px; padding-top:90px;}
 .activity-bd{margin-top:37px; width:1150px;}

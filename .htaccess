@@ -8,13 +8,17 @@ RewriteBase /
 RewriteCond %{QUERY_STRING} ^(.*)$
 RewriteRule ^index.html$ index.php
 RewriteCond %{QUERY_STRING} ^(.*)$
+
 RewriteRule ^about-([0-9]+)\.html$ about.php?id=$1
 RewriteCond %{QUERY_STRING} ^(.*)$
 
-RewriteRule ^activity_show-([0-9]+)-([0-9]+)\.html$ activity_show.php?cld=$1&id=$2
+RewriteRule ^activity_show-([0-9]+)-([0-9]+)\.html$ activity_show.php?cid=$1&id=$2
 RewriteCond %{QUERY_STRING} ^(.*)$
 
 RewriteRule ^news_show-([0-9]+)-([0-9]+)\.html$ news_show.php?cid=$1&id=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
+
+RewriteRule ^news-([0-9]+)\.html$ news.php?&page=$1
 RewriteCond %{QUERY_STRING} ^(.*)$
 
 RewriteRule ^news-([0-9]+)-([0-9]+)\.html$ news.php?cid=$1&page=$2
@@ -23,36 +27,16 @@ RewriteCond %{QUERY_STRING} ^(.*)$
 RewriteRule ^project\.html$ project.php
 RewriteCond %{QUERY_STRING} ^(.*)$
 
-RewriteRule ^project_show-([0-9]+)-([0-9]+)\.html$ project_show.php?cld=$1&id=$2
+RewriteRule ^project_list-([0-9]+)-([0-9]+)\.html$ project_list.php?cid=$1&page=$2
 RewriteCond %{QUERY_STRING} ^(.*)$
 
+RewriteRule ^project_show-([0-9]+)-([0-9]+)\.html$ project_show.php?cid=$1&id=$2
+RewriteCond %{QUERY_STRING} ^(.*)$
 
-RewriteRule ^newsshow-([0-9]+)-([0-9]+)-([0-9]+)\.html$ newsshow.php?cid=$1&id=$2&page=$3
+RewriteRule ^member-([0-9]+)\.html$ member.php?id=$1
 RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^product-([0-9]+)-([0-9]+)\.html$ product.php?cid=$1&page=$2
+
+RewriteRule ^sihui-([0-9]+)\.html$ sihui.php?id=$1
 RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^productshow-([0-9]+)-([0-9]+)-([0-9]+)\.html$ productshow.php?cid=$1&id=$2&page=$3
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^case-([0-9]+)-([0-9]+)\.html$ case.php?cid=$1&page=$2
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^caseshow-([0-9]+)-([0-9]+)-([0-9]+)\.html$ caseshow.php?cid=$1&id=$2&page=$3
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^join-([0-9]+)\.html$ join.php?page=$1
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^joinshow-([0-9]+)\.html$ joinshow.php?id=$1
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^message-([0-9]+)\.html$ message.php?page=$1
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^contact-([0-9]+)-([0-9]+)\.html$ contact.php?cid=$1&page=$2
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^soft-([0-9]+)-([0-9]+)\.html$ soft.php?cid=$1&page=$2
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^softshow-([0-9]+)-([0-9]+)-([0-9]+)\.html$ softshow.php?cid=$1&id=$2&page=$3
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^goods-([0-9]+)-([0-9]+)-([0-9]+)\.html$ goods.php?cid=$1&tid=$2&page=$3
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^goodsshow-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)\.html$ goodsshow.php?cid=$1&tid=$2&id=$3&page=$4
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^vote-([0-9]+)\.html$ vote.php?id=$1
-RewriteCond %{QUERY_STRING} ^(.*)$
+
 RewriteRule ^(\w+)\.html$ $1.php?

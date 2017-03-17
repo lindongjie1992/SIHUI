@@ -26,3 +26,4 @@
     </div>
 </div>
 <!-- 底部结束 -->
+<script type="text/javascript" src="templates/default/js/page.js"></script>

@@ -23,7 +23,7 @@
 				<h2 class="m-page-title"><?=GetCatName($cid)?></h2>
 				<ul class="m-page-nav fl">
 					<?php
-					$dosql->Execute("SELECT * FROM `#@__infoclass` WHERE parentid=4 AND checkinfo=true ORDER BY orderid DESC");
+					$dosql->Execute("SELECT * FROM `#@__infoclass` WHERE parentid=4 AND checkinfo=true ORDER BY orderid ASC");
 					while($row = $dosql->GetArray())
 					{
 						if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
@@ -111,6 +111,8 @@
 		</div>
 	</div>
 		<?php require_once 'inc/foot.php' ?>
+		<input type="hidden" id="active-nav-id" value="<?=$cid?>">
+		<input type="hidden" id="active-nav-name" value="news">
 	</body>
 
 </html>

@@ -20,6 +20,27 @@
 		
 		<div class="layout">
 			<div class="page-warp clearfix">
+				<h2 class="m-page-title"><?=getCatName($cid)?></h2>
+				<ul class="m-page-nav fl">
+					<?php
+					$dosql->Execute("SELECT * FROM `#@__infoclass` WHERE parentid=21 AND checkinfo=true ORDER BY orderid ASC");
+					while($row = $dosql->GetArray())
+					{
+						if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
+							$gourl = 'project_list.php?id=' . $row['id'];
+						} else {
+							if ($cfg_isreurl == 'Y') {
+								$gourl = 'project_list-' . $row['id'] . '-1.html';
+							} else {
+								$gourl = $row['linkurl'];
+							}
+						}
+						?>
+						<li><a href="<?=$gourl?>"><?=$row['classname']?></a></li>
+						<?php
+					}
+					?>
+				</ul>
 				<?php
 				$row = $dosql->GetOne("SELECT * FROM `#@__infolist` WHERE id=$id AND delstate='' AND checkinfo=true");
 				if(isset($row['id'])) {
@@ -29,9 +50,9 @@
 					$content = $row['content'];
 				}
 				?>
-				<h2 class="m-page-title"><?=$row['title']?></h2>
 
-				<div class="m-page-content2">
+
+				<div class="m-page-content1 fr">
 					<?= $content ?>
 					<?php
 					}
@@ -39,8 +60,9 @@
 				</div>
 			</div>
 		</div>
-
 		<?php require_once 'inc/foot.php' ?>
+		<input type="hidden" id="active-nav-id" value="<?=$cid?>">
+		<input type="hidden" id="active-nav-name" value="project_list">
 	</body>
 
 </html>

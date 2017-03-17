@@ -14,7 +14,7 @@
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
 					<?php
-					$dosql->Execute("SELECT * FROM `#@__infoimg` WHERE classid=13 AND delstate='' AND checkinfo=true ORDER BY orderid DESC LIMIT 0,5");
+					$dosql->Execute("SELECT * FROM `#@__infoimg` WHERE classid=13 AND delstate='' AND checkinfo=true ORDER BY orderid ASC LIMIT 0,5");
 					while($row = $dosql->GetArray()) {
 						if ($row['linkurl'] != '') {
 							$gourl = $row['linkurl'];
@@ -46,7 +46,7 @@
 						最新动态
 						<span>NEWS</span>
 					</h2>
-					<a class="index-news-more fr" href="#">更多</a>
+					<a class="index-news-more fr" href="news.html">更多</a>
 				</div>
 				<div class="index-news-bd clearfix">
 					<dl class="index-news-hot fl">

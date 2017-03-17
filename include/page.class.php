@@ -146,19 +146,19 @@ class Page
 				//伪静态设置
 				if($cfg_isreurl == 'Y' && !isset($keyword))
 				{
-					$pagetxt .= '<a href="'.$nowurl.'-1.html" title="第一页">&lt;&lt;</a>';
-					$pagetxt .= '<a href="'.$nowurl.'-'.$previous.'.html" title="上一页">&lt;</a>';
+					$pagetxt .= '<a href="'.$nowurl.'-1.html" title="第一页">首页</a>';
+					$pagetxt .= '<a href="'.$nowurl.'-'.$previous.'.html" title="上一页">上一页</a>';
 				}
 				else
 				{
-					$pagetxt .= '<a href="'.$nowurl.'page=1" title="第一页">&lt;&lt;</a>';
-					$pagetxt .= '<a href="'.$nowurl.'page='.$previous.'" title="上一页">&lt;</a>';
+					$pagetxt .= '<a href="'.$nowurl.'page=1" title="第一页">首页</a>';
+					$pagetxt .= '<a href="'.$nowurl.'page='.$previous.'" title="上一页">上一页</a>';
 				}
 			}
 			else
 			{
-				$pagetxt .= '<a href="javascript:;" title="已是第一页">&lt;&lt;</a>';
-				$pagetxt .= '<a href="javascript:;" title="已是第一页">&lt;</a>';
+				/*$pagetxt .= '<a href="javascript:;" title="已是第一页"></a>';
+				$pagetxt .= '<a href="javascript:;" title="已是第一页">&lt;</a>';*/
 			}
 
 			//当总页数小于10
@@ -243,19 +243,19 @@ class Page
 				if($cfg_isreurl == 'Y' &&
 				   !isset($keyword))
 				{
-					$pagetxt .= '<a href="'.$nowurl.'-'.$next.'.html" title="下一页">&gt;</a>';
-					$pagetxt .= '<a href="'.$nowurl.'-'.$this->totalpage.'.html" title="最后一页">&gt;&gt;</a>';
+					$pagetxt .= '<a href="'.$nowurl.'-'.$next.'.html" title="下一页">下一页</a>';
+					$pagetxt .= '<a href="'.$nowurl.'-'.$this->totalpage.'.html" title="最后一页">尾页</a>';
 				}
 				else
 				{
-					$pagetxt .= '<a href="'.$nowurl.'page='.$next.'" title="下一页">&gt;</a>';
-					$pagetxt .= '<a href="'.$nowurl.'page='.$this->totalpage.'" title="最后一页">&gt;&gt;</a>';
+					$pagetxt .= '<a href="'.$nowurl.'page='.$next.'" title="下一页">下一页</a>';
+					$pagetxt .= '<a href="'.$nowurl.'page='.$this->totalpage.'" title="最后一页">尾页</a>';
 				}
 			}
 			else
 			{
-				$pagetxt .= '<a href="javascript:;" title="已是最后一页">&gt;</a>';
-				$pagetxt .= '<a href="javascript:;" title="已是最后一页">&gt;&gt;</a>';
+				/*$pagetxt .= '<a href="javascript:;" title="已是最后一页">&gt;</a>';
+				$pagetxt .= '<a href="javascript:;" title="已是最后一页">&gt;&gt;</a>';*/
 			}
 			$pagetxt .= '</div>';
 		}

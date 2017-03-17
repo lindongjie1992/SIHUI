@@ -29,7 +29,7 @@
 							<div class="list list1 fr">
 								<div class="hd clearfix">
 									<span class="fl">1F  项目合作</span>
-									<a class="fr" href="#">更多 ></a>
+									<a class="fr" href="project_list-22-1.html">更多 ></a>
 								</div>
 								<ul class="bd">
 									<?php
@@ -61,7 +61,7 @@
 							<div class="list list2 fr">
 								<div class="hd clearfix">
 									<span class="fl">2F  资源供给</span>
-									<a class="fr" href="#">更多 ></a>
+									<a class="fr" href="project_list-23-1.html">更多 ></a>
 								</div>
 								<ul class="bd">
 									<?php
@@ -91,7 +91,7 @@
 							<div class="list list3 fr">
 								<div class="hd clearfix">
 									<span class="fl">3F  资源需求</span>
-									<a class="fr" href="#">更多 ></a>
+									<a class="fr" href="project_list-24-1.html">更多 ></a>
 								</div>
 								<ul class="bd">
 									<?php
