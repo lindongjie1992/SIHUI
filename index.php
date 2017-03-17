@@ -114,26 +114,7 @@
 			<!-- 首页最新动态结束 -->
 	
 			<!-- 首页专题活动开始 -->
-			<?php
-			$dosql->Execute("SELECT * FROM `#@__infolist` WHERE classid=19 AND delstate='' AND checkinfo=true ORDER BY orderid DESC LIMIT 0,3");
-			while($row = $dosql->GetArray()) {
-				//获取链接地址
-				if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
-					$gourl = 'activity_show.php?cid=' . $row['classid'] . '&id=' . $row['id'];
-				} else {
-					if ($cfg_isreurl == 'Y') {
-						$gourl = 'activity_show-' . $row['classid'] . '-' . $row['id'] . '.html';
-					} else {
-						$gourl = $row['linkurl'];
-					}
-				}
-				//获取缩略图地址
-				if ($row['picurl'] != '') {
-					$picurl = $row['picurl'];
-				} else {
-					$picurl = 'templates/default/images/nofoundpic.gif';
-				}
-				?>
+
 				<div class="index-activities">
 					<div class="index-activities-hd">
 						<h2 class="m-index-title">
@@ -142,22 +123,42 @@
 						</h2>
 					</div>
 					<ul class="index-activities-bd clearfix">
-
-						<li>
-							<a href="<?=$gourl?>">
-								<div class="img">
-									<img width="350" height="200" src="<?= $picurl ?>" alt=""/>
-								</div>
-								<h2 class="title">
-									<?= ReStrLen($row['title'], 20) ?>
-								</h2>
-							</a>
-						</li>
+						<?php
+						$dosql->Execute("SELECT * FROM `#@__infolist` WHERE classid=19 AND flag NOT LIKE '%a%' AND delstate='' AND checkinfo=true ORDER BY orderid DESC LIMIT 0,3");
+						while($row = $dosql->GetArray()) {
+							//获取链接地址
+							if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
+								$gourl = 'activity_show.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+							} else {
+								if ($cfg_isreurl == 'Y') {
+									$gourl = 'activity_show-' . $row['classid'] . '-' . $row['id'] . '.html';
+								} else {
+									$gourl = $row['linkurl'];
+								}
+							}
+							//获取缩略图地址
+							if ($row['picurl'] != '') {
+								$picurl = $row['picurl'];
+							} else {
+								$picurl = 'templates/default/images/nofoundpic.gif';
+							}
+							?>
+							<li>
+								<a href="<?= $gourl ?>">
+									<div class="img">
+										<img width="350" height="200" src="<?= $picurl ?>" alt=""/>
+									</div>
+									<h2 class="title">
+										<?= ReStrLen($row['title'], 20) ?>
+									</h2>
+								</a>
+							</li>
+							<?php
+						}
+						?>
 					</ul>
 				</div>
-				<?php
-			}
-			?>
+
 			<!-- 首页专题活动结束 -->
 	
 			<!-- 首页明星会员开始 -->
@@ -285,7 +286,7 @@
 						</a>
 					</li>
 					<li>
-						<a class="item first-item" href="#">
+						<a class="item first-item" href="sihui-35.html">
 							<span>四会概况</span>
 							<img src="templates/default/images/new_sihui_img02.jpg" alt="" />
 						</a>
@@ -295,7 +296,7 @@
 						</a>
 					</li>
 					<li>
-						<a class="item" href="#">
+						<a class="item" href="sihui-36.html">
 							<span>投资环境</span>
 							<img src="templates/default/images/new_sihui_img03.jpg" alt="" />
 						</a>

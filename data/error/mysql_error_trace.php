@@ -28,3 +28,6 @@
 <?php exit(); ?> Time: 2017-03-17 11:15:52. || Page: /project_list-23-1.html || IP: 192.168.0.110 || Error: 连接数据库失败，可能数据库密码不对或数据库服务器出错！
 <?php exit(); ?> Time: 2017-03-17 11:16:52. || Page: /index.html || IP: 192.168.0.115 || Error: 连接数据库失败，可能数据库密码不对或数据库服务器出错！
 <?php exit(); ?> Time: 2017-03-17 11:26:23. || Page: /member.html || IP: 192.168.0.115 || Error: 连接数据库失败，可能数据库密码不对或数据库服务器出错！
+<?php exit(); ?> Time: 2017-03-17 12:25:19. || Page: /index.html || IP: 192.168.0.115 || Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIKE '%a%' AND delstate='' AND checkinfo=true ORDER BY orderid DESC LIMIT 0,3' at line 1 Error sql: SELECT * FROM `sh_infolist` WHERE classid=19 AND NOT LIKE '%a%' AND delstate='' AND checkinfo=true ORDER BY orderid DESC LIMIT 0,3
+<?php exit(); ?> Time: 2017-03-17 13:30:42. || Page: /admin/site.php || IP: 192.168.0.115 || Error: 连接数据库失败，可能数据库密码不对或数据库服务器出错！
+<?php exit(); ?> Time: 2017-03-17 13:34:11. || Page: /index.html || IP: 192.168.0.115 || Error: 连接数据库失败，可能数据库密码不对或数据库服务器出错！

@@ -18,7 +18,8 @@ body{font-family: "microsoft yahei"; font-size:14px; background:#efefef; color:#
 .banner{width:100%; height:449px;}
 .foot{width:100%; min-width: 1100px; height:145px; background:#f4dfc2; border-top:2px solid #c49520; margin-top:92px;}
 .foot-nav{padding-top:40px;}
-.foot-nav span{margin:0 5px;}
+.foot-nav li{float:left; border-right:1px solid #666; padding:0 10px;}
+.foot-nav li:last-child{border: none;}
 .foot-info{margin-top:33px; background:url(../images/foot_logo.png) right center no-repeat;}
 .foot-info p{text-align: right; line-height: 30px; margin-right:100px; padding-right:40px; border-right:1px solid #ada294;}
 
@@ -104,11 +105,12 @@ body{font-family: "microsoft yahei"; font-size:14px; background:#efefef; color:#
 .article-content1 .page-turning{height:40px; line-height: 40px;}
 
 .page_list,.page_info{text-align: center;}
-.page_list a{display: inline-block; padding:8px 15px; border:1px solid #ddd; margin-left:-1px;}
+.page_list a{display: inline-block; padding:8px 10px; border:1px solid #ddd; margin-left:-1px;}
 .page_list .on{background:#8a8a8a; color:#fff;}
 
 /*活动专题*/
-.activity-hd .title{width:280px; height:187px; background:#5eb5bd; color:#fff; font-size:30px; text-align: center; line-height: 50px; padding-top:90px;}
+.activity-hd .title{width:240px; height:187px; background:#5eb5bd; color:#fff; font-size:30px; text-align: center; line-height: 50px; padding:90px 20px 0;}
+.activity-hd .title p{height:100px; overflow: hidden;}
 .activity-bd{margin-top:37px; width:1150px;}
 .activity-bd li{ width: 322px; overflow: hidden; margin:0 23px 23px 0; background:#e7e7e7; float:left;}
 .activity-bd li:hover{background:#f4dfc2;}

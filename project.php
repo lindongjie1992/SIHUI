@@ -22,9 +22,28 @@
 
 						<div class="item clearfix">
 							<div class="add fl">
-								<a href="#">
-									<img src="templates/default/images/project_add_01.jpg"/>
-								</a>
+								<?php
+								$row = $dosql->GetOne("SELECT * FROM `#@__infoimg` WHERE id=18 AND delstate='' AND checkinfo=true ORDER BY orderid DESC");
+								if(isset($row['id'])) {
+									//获取链接地址
+									if ($row['linkurl'] == '') {
+										$gourl = 'javascript:void(0);';
+									} else {
+										$gourl = $row['linkurl'];
+									}
+									//获取缩略图地址
+									if ($row['picurl'] != '') {
+										$picurl = $row['picurl'];
+									} else {
+										$picurl = 'templates/default/images/nofoundpic.gif';
+									}
+									?>
+									<a href="<?=$gourl?>">
+										<img width="259" height="297" src="<?=$picurl?>"/>
+									</a>
+									<?php
+								}
+								?>
 							</div>
 							<div class="list list1 fr">
 								<div class="hd clearfix">
@@ -54,9 +73,28 @@
 
 						<div class="item clearfix">
 							<div class="add fl">
-								<a href="#">
-									<img src="templates/default/images/project_add_02.jpg"/>
-								</a>
+								<?php
+								$row = $dosql->GetOne("SELECT * FROM `#@__infoimg` WHERE id=19 AND delstate='' AND checkinfo=true ORDER BY orderid DESC");
+								if(isset($row['id'])) {
+									//获取链接地址
+									if ($row['linkurl'] == '') {
+										$gourl = 'javascript:void(0);';
+									} else {
+										$gourl = $row['linkurl'];
+									}
+									//获取缩略图地址
+									if ($row['picurl'] != '') {
+										$picurl = $row['picurl'];
+									} else {
+										$picurl = 'templates/default/images/nofoundpic.gif';
+									}
+									?>
+									<a href="<?=$gourl?>">
+										<img width="259" height="297" src="<?=$picurl?>"/>
+									</a>
+									<?php
+								}
+								?>
 							</div>
 							<div class="list list2 fr">
 								<div class="hd clearfix">
@@ -84,9 +122,28 @@
 						</div>
 						<div class="item clearfix" style="margin-bottom: 0;">
 							<div class="add fl">
-								<a href="#">
-									<img src="templates/default/images/project_add_03.jpg"/>
-								</a>
+								<?php
+								$row = $dosql->GetOne("SELECT * FROM `#@__infoimg` WHERE id=20 AND delstate='' AND checkinfo=true ORDER BY orderid DESC");
+								if(isset($row['id'])) {
+									//获取链接地址
+									if ($row['linkurl'] == '') {
+										$gourl = 'javascript:void(0);';
+									} else {
+										$gourl = $row['linkurl'];
+									}
+									//获取缩略图地址
+									if ($row['picurl'] != '') {
+										$picurl = $row['picurl'];
+									} else {
+										$picurl = 'templates/default/images/nofoundpic.gif';
+									}
+									?>
+									<a href="<?=$gourl?>">
+										<img width="259" height="297" src="<?=$picurl?>"/>
+									</a>
+									<?php
+								}
+								?>
 							</div>
 							<div class="list list3 fr">
 								<div class="hd clearfix">

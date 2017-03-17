@@ -20,20 +20,44 @@
 			<div class="page-warp clearfix">
 				<h2 class="m-page-title">专题活动</h2>
 				<div class="m-page-content2">
-					<div class="activity-hd">
-						<a href="#" class="clearfix">
-							<div class="title fl">
-								四会新规划<br />
-								一区两城三基地
-							</div>
-							<div class="img fl">
-								<img src="templates/default/images/subject_03.jpg"/>
-							</div>
-						</a>
-					</div>
+					<?php
+					$row = $dosql->GetOne("SELECT * FROM `#@__infolist` WHERE classid=19 AND flag LIKE '%a%' AND delstate='' AND checkinfo=true ORDER BY orderid DESC");
+					if(isset($row['id'])) {
+						//获取链接地址
+						if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
+							$gourl = 'activity_show.php?cid=' . $row['classid'] . '&id=' . $row['id'];
+						} else {
+							if ($cfg_isreurl == 'Y') {
+								$gourl = 'activity_show-' . $row['classid'] . '-' . $row['id'] . '.html';
+							} else {
+								$gourl = $row['linkurl'];
+							}
+						}
+						//获取缩略图地址
+						if ($row['picurl'] != '') {
+							$picurl = $row['picurl'];
+						} else {
+							$picurl = 'templates/default/images/nofoundpic.gif';
+						}
+						?>
+						<div class="activity-hd">
+							<a href="<?=$gourl?>" class="clearfix">
+								<div class="title fl">
+									<p>
+										<?=$row['title']?>
+									</p>
+								</div>
+								<div class="img fl">
+									<img width="730" height="277" src="<?=$picurl?>"/>
+								</div>
+							</a>
+						</div>
+						<?php
+					}
+					?>
 					<ul class="activity-bd clearfix">
 						<?php
-						$dosql->Execute("SELECT * FROM `#@__infolist` WHERE classid=19 AND delstate='' AND checkinfo=true ORDER BY orderid DESC");
+						$dosql->Execute("SELECT * FROM `#@__infolist` WHERE classid=19 AND flag NOT LIKE '%a%' AND delstate='' AND checkinfo=true ORDER BY orderid DESC");
 						while($row = $dosql->GetArray()) {
 							//获取链接地址
 							if ($row['linkurl'] == '' and $cfg_isreurl != 'Y') {
